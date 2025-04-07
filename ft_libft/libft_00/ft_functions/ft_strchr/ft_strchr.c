@@ -12,20 +12,23 @@
 
 #include <stdio.h>
 //#include <string.h>
-char *ft_strchr(char *str, int chr) {
-  while (*str) {
-    if (*str == (char)chr)
-      return (str);
-    str++;
-  }
-  return ((char *)'\0');
-}
-
-int main()
+char	*ft_strchr(char *str, int chr)
 {
-  char *str = "Hello, World";
-  int chr = 'y';
-  printf("42:%s\n",ft_strchr(str, chr));
+	while (*str)
+	{
+		if (*str == (char)chr)
+			return (str);
+		str++;
+	}
+	return ((char *) '\0');
+}
+/*
+int	main(void)
+{
+	char	*str = "Hello, World";
+	int	chr = 'y';
+
+	printf("42:%s\n",ft_strchr(str, chr));
   //printf("string.h:%s\n",strchr(str, chr));
 }
-
+*/

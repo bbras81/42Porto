@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str) {
-  int count;
+int	ft_strlen(char *str)
+{
+	int	count;
 
-  count = 0;
-  while (str[count]) {
-    count++;
-  }
-  return (count);
+	count = 0;
+	while (str[count])
+	{
+		count++;
+	}
+	return (count);
 }
 /*
 #include <stdio.h>

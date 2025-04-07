@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 19:11:20 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/04/06 20:41:25 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/04/07 11:51:05 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,43 +16,55 @@ void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
-
+void	ft_putstr(char *str)
+{
+	while (*str)
+	{
+		ft_putchar(*str);
+		str++;
+	}
+}
+int	ft_strcmp(char *s1, char *s2)
+{
+	while (*s1 && *s2 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
+}
 int	main(int argc, char **argv)
 {
-	if (argc <= 1)
-		return (0);
-
-	int args;
-	int chars;
+	int count;
+	int swap;
 	char *temp;
 
-	args = 1;
-	chars = 0;
-	while (args < argc)
+	count = 1;
+	swap = 0;
+	while (*argv)
 	{
-		while (argv[args][chars])
+		if (ft_strcmp(argv[count], argv[count + 1]) > 0)
 		{
-			if (argv[args][chars] > argv[args + 1][chars])
-			{
-				temp = argv[args];
-				argv[args] = argv[args + 1];
-				argv[args + 1] = temp;
-			}
-			chars++;
+			temp = argv[count];
+			argv[count] = argv[count + 1];
+			argv[count] = temp;
+			swap ++;
+			count ++;
 		}
-		chars = 0;
-		args++;
+		if (swap == 0 && count == argc - 1)
+			break;
+		if (count == argc - 1)
+		{
+			swap = 0;
+			count = 1;
+		}
+		argv++;
 	}
-	while (args < argc)
+	while(*argv)
 	{
-		while (argv[args][chars])
-		{
-			ft_putchar(argv[args][chars]);
-			chars++;
-		}
+		ft_putstr(argv[count]);
 		ft_putchar('\n');
-		chars = 0;
-		args++;
+		argv++;
 	}
 	return (1);
 }

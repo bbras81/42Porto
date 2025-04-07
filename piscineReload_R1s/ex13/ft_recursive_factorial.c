@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
+/*   By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 08:25:46 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/04/05 08:41:04 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/04/07 12:01:08 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int	ft_recursive_factorial(int nb)
 {
